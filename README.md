@@ -15,10 +15,21 @@ Use `/configure` (see below) to configure the bot for your discord server.
 `cd discord-twitch-bot`<br />
 `npm install`
 
+### Setup developer
+
+Make a config.json file in the root directory of the project and add:
+
+```
+{
+  "token": "Your-Bot-Token",
+  "twitchClientID": "Twitch Client ID",
+  "intervals": "60" 
+}
+```
 
 ## Usage
 
-`node discord-twitch-bot TOKEN CLIENTID INTERVAL`
+`node .`
 
 ```
 TOKEN           Discord app bot user token
