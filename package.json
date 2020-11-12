@@ -7,12 +7,10 @@
     },
     "author": "yuki",
     "license": "GPL-3.0",
-
     "dependencies": {
         "discord.js": "11.0.0"
     },
     "devDependencies": {},
-
     "repository": {
         "type": "git",
         "url": "git+https://github.com/fuyuneko/discord-twitch-bot.git"
