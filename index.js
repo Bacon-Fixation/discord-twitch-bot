@@ -202,7 +202,7 @@ Client.on("message", (message) => {
   if (message.content[0] == server.prefix) {
     var permission;
     try {
-      permission = message.member.roles.exists("name", server.role);
+      permission = message.member.roles.cache.some(role => role.name === server.name);  // member.roles.cache.some(role => role.name === "name"))
     } catch (err) {
       print(server.role + " is not a role on the server", err);
     }
@@ -321,7 +321,7 @@ Client.on("message", (message) => {
             let channel = message.content.substring(23);
             if (channel.replace(/\s/g, "").length === 0) {
               msg += "Please specify an argument";
-            } else if (message.guild.channels.exists("name", channel)) {
+            } else if (message.guild.channels.cache.find(channel => channel.name === message.content.substring(23))) {
               server.discordChannels.push(channel);
               msg += "Added " + channel + " to list of channels to post in.";
             } else {
