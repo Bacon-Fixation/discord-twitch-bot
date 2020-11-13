@@ -121,13 +121,13 @@ function apiCallback(server, twitchChannel, res) {
     try {
       var channels = [],
         defaultChannel;
-      var guild = Client.guilds.find("name", server.name);
+      var guild = Client.guilds.cache.find(guilds => guilds.name === server.name); //guilds.cache.find(guilds => guilds.name === server.name)
 
       if (server.discordChannels.length === 0) {
-        defaultChannel = guild.channels.find("type", "text");
+        defaultChannel = guild.channels.cache.find("type", "text");
       } else {
         for (let i = 0; i < server.discordChannels.length; i++) {
-          channels.push(guild.channels.find("name", server.discordChannels[i]));
+          channels.push(guild.channels.cache.find(channel => channel.name === server.discordChannels[i])); 
         }
       }
       var embed = new Discord.RichEmbed()
