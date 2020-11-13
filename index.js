@@ -202,7 +202,7 @@ Client.on("message", (message) => {
   if (message.content[0] == server.prefix) {
     var permission;
     try {
-      permission = message.member.roles.cache.some(role => role.name === server.name);  // member.roles.cache.some(role => role.name === "name"))
+      permission = message.member.roles.cache.some(role => role.name === server.role);  // member.roles.cache.some(role => role.name === "name"))
     } catch (err) {
       print(server.role + " is not a role on the server", err);
     }
